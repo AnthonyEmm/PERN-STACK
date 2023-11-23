@@ -17,6 +17,7 @@ function App() {
 
   return (
     <>
+      <input type="text" placeholder="Book title" />
       {books.map((book) => {
         return (
           <div key={book.id}>
