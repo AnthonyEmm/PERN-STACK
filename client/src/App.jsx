@@ -17,7 +17,43 @@ function App() {
 
   return (
     <>
-      <input type="text" placeholder="Book title" />
+      <form>
+        <label for="btitle">Title</label>
+        <br />
+        <input type="text" id="btitle" name="btitle" placeholder="Book Title" />
+        <br />
+        <label for="author">Author</label>
+        <br />
+        <input type="text" id="author" name="author" placeholder="Author" />
+        <br />
+        <label for="description">Description</label>
+        <br />
+        <input
+          type="text"
+          id="description"
+          name="description"
+          placeholder="Description"
+        />
+        <br />
+        <label for="category">Category</label>
+        <br />
+        <input
+          type="text"
+          id="category"
+          name="category"
+          placeholder="Category"
+        />
+        <br />
+        <label for="url">Cover URL</label>
+        <br />
+        <input type="text" id="URL" name="URL" placeholder="Cover URL" />
+        <br />
+        <label for="date">Published At</label>
+        <br />
+        <input type="date" id="date" name="date" />
+      </form>
+      <br />
+      <button type="submit">Submit</button>
       {books.map((book) => {
         return (
           <div key={book.id}>
