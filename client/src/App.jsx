@@ -57,8 +57,10 @@ function App() {
       {books.map((book) => {
         return (
           <div key={book.id}>
-            {book.title} {book.author} {book.description} {book.category}
-            {book.cover_url} {book.published_at} {book.is_active}
+            <h1>{book.title}</h1> <h2>{book.author}</h2>
+            <p>{book.description}</p> <h2>{book.category}</h2>
+            <img src={book.cover_url} />
+            <p>{book.published_at}</p>
           </div>
         );
       })}
