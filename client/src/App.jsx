@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
+import CreateBook from "./components/CreateBook";
 import "./App.css";
 
 function App() {
@@ -17,50 +19,26 @@ function App() {
 
   return (
     <>
-      <form>
-        <label for="btitle">Title</label>
-        <br />
-        <input type="text" id="btitle" name="btitle" placeholder="Book Title" />
-        <br />
-        <label for="author">Author</label>
-        <br />
-        <input type="text" id="author" name="author" placeholder="Author" />
-        <br />
-        <label for="description">Description</label>
-        <br />
-        <input
-          type="text"
-          id="description"
-          name="description"
-          placeholder="Description"
-        />
-        <br />
-        <label for="category">Category</label>
-        <br />
-        <input
-          type="text"
-          id="category"
-          name="category"
-          placeholder="Category"
-        />
-        <br />
-        <label for="url">Cover URL</label>
-        <br />
-        <input type="text" id="URL" name="URL" placeholder="Cover URL" />
-        <br />
-        <label for="date">Published At</label>
-        <br />
-        <input type="date" id="date" name="date" />
-      </form>
-      <br />
-      <button type="submit">Submit</button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/books" element={<books />} />
+          <Route path="/books/create" element={<CreateBook />} />
+        </Routes>
+      </BrowserRouter>
+
+      <h1>Book List</h1>
+      <button>
+        <a href="./components/CreateBook"></a>Submit a book
+      </button>
       {books.map((book) => {
         return (
-          <div key={book.id}>
-            <h1>{book.title}</h1> <h2>{book.author}</h2>
-            <p>{book.description}</p> <h2>{book.category}</h2>
-            <img src={book.cover_url} />
-            <p>{book.published_at}</p>
+          <div className="book-list">
+            <div key={book.id}>
+              <h1>{book.title}</h1> <h2>{book.author}</h2>
+              <p>{book.description}</p> <h2>{book.category}</h2>
+              <img src={book.cover_url} />
+              <p>{book.published_at}</p>
+            </div>
           </div>
         );
       })}
