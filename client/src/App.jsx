@@ -25,11 +25,7 @@ function App() {
           <Route path="/books/create" element={<CreateBook />} />
         </Routes>
       </BrowserRouter>
-
       <h1>Book List</h1>
-      <button>
-        <a href="./components/CreateBook"></a>Submit a book
-      </button>
       {books.map((book) => {
         return (
           <div className="book-list">
