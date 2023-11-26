@@ -11,7 +11,6 @@ function App() {
     axios
       .get("http://localhost:8050/books")
       .then((response) => {
-        console.log(response);
         setBooks(response.data);
       })
       .catch((err) => console.log(err));

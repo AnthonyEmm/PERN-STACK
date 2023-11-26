@@ -64,6 +64,12 @@ const SubmitBook = () => {
           {...register("published_at", { required: true, minLength: 4 })}
           placeholder="Published Date"
         />
+        <label htmlFor="Active">Is the Book Active?</label>
+        <input
+          type="checkbox"
+          {...register("is_active", { required: true })}
+          placeholder="is_active"
+        />
         <button onClick={notify}>Submit</button>
         <ToastContainer
           position="top-right"

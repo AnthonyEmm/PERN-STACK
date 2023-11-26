@@ -3,10 +3,12 @@ import SubmitBook from "./SubmitBook";
 
 const CreateBook = () => {
   return (
-    <div>
-      <h1>Submit A Book</h1>
-      <SubmitBook />
-    </div>
+    <>
+      <div>
+        <h1>Submit A Book</h1>
+        <SubmitBook />
+      </div>
+    </>
   );
 };
 
