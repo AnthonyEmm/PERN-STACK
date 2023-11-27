@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 import CreateBook from "./components/CreateBook";
 import "./App.css";
@@ -18,12 +18,11 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/books" element={<books />} />
-          <Route path="/books/create" element={<CreateBook />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<books />} />
+        <Route path="/books/create" element={<CreateBook />} />
+      </Routes>
+
       <h1>Book List</h1>
       {books.map((book) => {
         return (

@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
 // Handling GET requests to retrieve all books from the database //
 app.get("/books", async (req, res) => {
   try {
+    // const { limit, skip } = req.query;
     const result = await pool.query("SELECT * FROM books");
     res.json(result.rows);
   } catch (error) {
@@ -38,7 +39,7 @@ app.post("/books/create", async (req, res) => {
       category,
       cover_url,
       published_at,
-      is_active,
+      is_active = true,
     } = req.body;
     const result = await pool.query(
       "INSERT INTO books (title, author, description, category, cover_url, published_at, is_active) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
