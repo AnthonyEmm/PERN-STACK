@@ -30,16 +30,16 @@ app.get("/books", async (req, res) => {
 
 // POST request on path ‘/books’ into the database //
 app.post("/books/create", async (req, res) => {
-  const {
-    title,
-    author,
-    description,
-    category,
-    cover_url,
-    published_at,
-    is_active,
-  } = req.body;
   try {
+    const {
+      title,
+      author,
+      description,
+      category,
+      cover_url,
+      published_at,
+      is_active,
+    } = req.body;
     const result = await pool.query(
       "INSERT INTO books (title, author, description, category, cover_url, published_at, is_active) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
       [
@@ -60,8 +60,8 @@ app.post("/books/create", async (req, res) => {
 
 // DELETE request on path ‘/books/:id’ to delete a book from DB //
 app.delete("/books/:id", async (req, res) => {
-  const { id } = req.params;
   try {
+    const { id } = req.params;
     const result = await pool.query(
       "DELETE FROM books WHERE id=$1 RETURNING *",
       [id],
