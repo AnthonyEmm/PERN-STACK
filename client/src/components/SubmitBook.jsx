@@ -64,7 +64,7 @@ const SubmitBook = () => {
           {...register("published_at", { required: true, minLength: 4 })}
           placeholder="Published Date"
         />
-        <label htmlFor="Active">Is the Book Active?</label>
+        <label htmlFor="Active">Book Must Be Active</label>
         <input
           type="checkbox"
           {...register("is_active", { required: true })}
