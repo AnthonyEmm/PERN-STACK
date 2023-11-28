@@ -1,11 +1,11 @@
 # PERN-STACK 
 Creating my first full stack application
 # NODEJS INSTALLATIONS (BACKEND DEPENDENDIES)
-$ npm install express
-$ npm install cors
-$ npm install pg
-npm install cors
-npm install dotenv --save (recommended)
+# $ npm install express
+# $ npm install cors
+# $ npm install pg
+# $ npm install cors
+# $ npm install dotenv --save (recommended)
 
 
 # GETTING STARTED
